@@ -3,6 +3,8 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 Follow the guidance in `docs/AGENT_HANDBOOK.md` and `docs/WORKFLOW.md`.
+Start in plan mode, ask the required intake questions, and wait for
+answers before making changes.
 
 ## AI Guidance
 

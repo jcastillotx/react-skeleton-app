@@ -8,6 +8,18 @@ repository. It establishes expectations for quality, safety, and delivery.
 - Preserve existing behavior unless explicitly asked to change it.
 - Write clear commit messages and changelog entries when required.
 - Document user-visible changes.
+- Start every engagement in plan mode. Ask the required intake questions
+  and wait for answers before changing files.
+
+## Plan Mode Intake Questions (Required)
+- What outcome should the user see when this is done?
+- Which stack is required: Laravel app, Next.js app, or WordPress plugin?
+- Where is the deployment target: WHM AWS LAMP server, Vercel, or the
+  existing React server?
+- What is in scope vs. explicitly out of scope?
+- Are there constraints (deadlines, tech choices, must-not-change areas)?
+- What are the acceptance criteria and how will we verify success?
+- What tests or checks are expected?
 
 ## Architecture & Boundaries
 - Respect module boundaries and avoid tight coupling.
