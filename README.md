@@ -14,6 +14,8 @@ new application.
 * `.gitignore` – ignores build artefacts, dependencies, and secrets.
 * `.github/` – GitHub-specific configuration including a pull request
   template and Copilot instructions.
+* `agents/` – vendored agent prompts sourced from
+  https://github.com/wshobson/agents.
 * `docs/` – core documentation:
   * `AGENT_HANDBOOK.md` – the single source of truth for agent
     behaviour, architecture rules, and general policies.
@@ -32,4 +34,3 @@ assistant.
 > **Note:** To use these templates in a new project, copy this
 > directory into the root of your repository and customise the
 > contents to reflect your stack (React, Laravel, WordPress, etc.).
-
