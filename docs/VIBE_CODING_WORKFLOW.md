@@ -732,6 +732,22 @@ Legend: ✅ Full | ⚠️ Partial | ❌ None
 - **CLAUDE.md Guides**: `Guide On CLAUDE.md/readme.md`
 - **Tech Stack**: `TECHSTACK.md`
 - **AI Specification**: `AI_GUIDE.md` (AISP 5.1)
+- **MCP Servers**: `docs/SUBAGENTS_AND_MCP_SERVERS.md`
+
+## MCP Server Configurations
+
+Pre-configured MCP server stacks are available in `.claude/mcp/`:
+
+| File | Purpose |
+|------|---------|
+| `web-dev-stack.json` | GitHub, Playwright, Supabase, Figma, Context7 |
+| `security-stack.json` | SonarQube, Sentry, Snyk |
+| `project-management.json` | Linear, Jira, Notion, GitHub |
+| `devops-stack.json` | Docker, AWS, Cloudflare, Vercel |
+
+Platform-specific configs:
+- Cursor: `.cursor/mcp.json`
+- Cline: `.cline/mcp_settings.json`
 
 ---
 
