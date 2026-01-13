@@ -122,13 +122,13 @@ Test subagent availability:
 
 ### Overview
 
-Cursor supports CLAUDE.md files and has partial subagent support through its own agent system.
+Cursor supports CLAUDE.md files and has partial subagent support through its own agent system. The enhanced `.cursor/rules.md` provides comprehensive guidance including memory bank integration, workflow phases, and code quality standards.
 
 ### Required Files
 
 ```
 .cursor/
-└── rules.md              # Cursor-specific rules
+└── rules.md              # Comprehensive Cursor-specific rules
 
 CLAUDE.md                 # Also read by Cursor
 CLAUDE-*.md               # Memory bank files
@@ -136,22 +136,16 @@ CLAUDE-*.md               # Memory bank files
 
 ### Setup Steps
 
-1. **Configure rules.md**
+1. **Verify rules.md**
 
-```markdown
-# .cursor/rules.md
-
-- Follow `docs/AGENT_HANDBOOK.md`.
-- Start in plan mode, ask the required intake questions, and wait for
-  answers before making changes.
-- Make minimal, well-scoped changes.
-- Update docs when user-facing behavior changes.
-
-## Additional Rules
-- Always check CLAUDE-activeContext.md for session state
-- Reference CLAUDE-patterns.md for code conventions
-- Log architectural decisions in CLAUDE-decisions.md
-```
+The enhanced `rules.md` includes:
+- Plan mode intake questions
+- Memory bank integration
+- Workflow phases
+- Code quality standards
+- Command reference
+- Git commit standards
+- Cursor-specific features (Composer, Chat, Inline)
 
 2. **Enable CLAUDE.md**
 
@@ -159,7 +153,20 @@ Cursor automatically reads `CLAUDE.md` when present. Ensure it's in the root.
 
 3. **Memory Bank Setup**
 
-Same as Claude Code - create CLAUDE-*.md files.
+```bash
+# Create memory bank files
+touch CLAUDE-activeContext.md
+touch CLAUDE-patterns.md
+touch CLAUDE-decisions.md
+touch CLAUDE-troubleshooting.md
+```
+
+4. **Use @ References**
+
+In Cursor Composer:
+- `@filename` - Reference specific files
+- `@folder/` - Reference directories
+- `@CLAUDE-activeContext.md` - Check session state
 
 ### Features Available
 
@@ -170,6 +177,8 @@ Same as Claude Code - create CLAUDE-*.md files.
 | Commands | ❌ None | Not supported |
 | Skills | ❌ None | Not supported |
 | MCP Servers | ⚠️ Partial | Depends on Cursor version |
+| Plan Mode | ✅ Full | Documented in rules.md |
+| Intake Questions | ✅ Full | All 7 questions included |
 
 ---
 
@@ -177,39 +186,29 @@ Same as Claude Code - create CLAUDE-*.md files.
 
 ### Overview
 
-GitHub Copilot uses a simpler instruction file but doesn't support memory banks or subagents.
+GitHub Copilot now has comprehensive instruction support with full plan mode, intake questions, memory bank integration, and code generation guidelines.
 
 ### Required Files
 
 ```
 .github/
-├── copilot-instructions.md    # Copilot rules
+├── copilot-instructions.md    # Comprehensive Copilot rules
 └── pull_request_template.md   # PR template
 ```
 
 ### Setup Steps
 
-1. **Configure copilot-instructions.md**
+1. **Verify copilot-instructions.md**
 
-```markdown
-# Copilot Instructions
-
-## Ground Rules
-- Follow the policies in `docs/AGENT_HANDBOOK.md`.
-- Prefer small, reviewable changes.
-- Do not commit secrets or credentials.
-
-## Code Quality
-- Match existing style and formatting.
-- Add tests when behavior changes.
-- Update documentation when user-facing behavior changes.
-
-## Plan Mode
-Before implementing:
-1. Ask clarifying questions about scope
-2. Confirm approach for complex work
-3. List pros/cons if multiple approaches exist
-```
+The enhanced file includes:
+- Plan mode with all 7 intake questions
+- Memory bank system integration
+- Workflow phases documentation
+- Code generation guidelines by language
+- Git conventional commit standards
+- Quick reference checklists
+- Inline suggestion guidelines
+- Chat mode guidelines
 
 2. **Configure PR Template**
 
@@ -226,16 +225,25 @@ Before implementing:
 - [ ] No secrets committed
 ```
 
+3. **Memory Bank Integration**
+
+While Copilot doesn't have native memory bank support, the instructions guide it to:
+- Check `CLAUDE-activeContext.md` for session state
+- Follow patterns from `CLAUDE-patterns.md`
+- Reference `CLAUDE-decisions.md` for architecture
+
 ### Features Available
 
 | Feature | Status | Notes |
 |---------|--------|-------|
 | Subagents | ❌ None | Not supported |
-| Memory Bank | ❌ None | Not supported |
+| Memory Bank | ⚠️ Reference | Can read but not auto-check |
 | Commands | ❌ None | Not supported |
 | Skills | ❌ None | Not supported |
 | MCP Servers | ❌ None | Not supported |
-| Plan Mode | ⚠️ Partial | Manual prompting required |
+| Plan Mode | ✅ Full | Documented in instructions |
+| Intake Questions | ✅ Full | All 7 questions included |
+| Code Generation | ✅ Full | Language-specific guidelines |
 
 ---
 
@@ -308,31 +316,38 @@ touch GEMINI-config-variables.md
 
 ### Overview
 
-Windsurf uses a simple rules file that references the main handbook.
+Windsurf now has comprehensive rules with full plan mode support, memory bank integration, workflow phases, and code quality standards.
 
 ### Required Files
 
 ```
-.windsurfrules              # Windsurf adapter
+.windsurfrules              # Comprehensive Windsurf rules
 ```
 
 ### Setup Steps
 
-1. **Configure .windsurfrules**
+1. **Verify .windsurfrules**
 
+The enhanced file includes:
+- All 7 plan mode intake questions
+- Complete memory bank system documentation
+- Full workflow phases (Discovery → Release)
+- Code quality standards
+- Command reference
+- Git conventional commit standards
+- Quick reference checklists
+
+2. **Memory Bank Setup**
+
+```bash
+# Create memory bank files
+touch CLAUDE-activeContext.md
+touch CLAUDE-patterns.md
+touch CLAUDE-decisions.md
+touch CLAUDE-troubleshooting.md
 ```
-Follow the policies in docs/AGENT_HANDBOOK.md and docs/WORKFLOW.md.
-Start in plan mode, ask the required intake questions, and wait for
-answers before making changes.
-Keep changes small and focused.
 
-## Memory Bank
-- Check CLAUDE-activeContext.md for session state
-- Reference CLAUDE-patterns.md for conventions
-- Update CLAUDE-decisions.md for architecture choices
-```
-
-2. **Use Claude Memory Bank**
+3. **Verify Integration**
 
 Windsurf shares memory bank with Claude using CLAUDE-*.md files.
 
@@ -345,6 +360,9 @@ Windsurf shares memory bank with Claude using CLAUDE-*.md files.
 | Commands | ❌ None | Not supported |
 | Skills | ❌ None | Not supported |
 | MCP Servers | ⚠️ Partial | Depends on version |
+| Plan Mode | ✅ Full | Documented in rules |
+| Intake Questions | ✅ Full | All 7 questions included |
+| Workflow Phases | ✅ Full | All phases documented |
 
 ---
 
@@ -352,33 +370,43 @@ Windsurf shares memory bank with Claude using CLAUDE-*.md files.
 
 ### Overview
 
-Cline is configured to read CLAUDE.md directly via its rules file.
+Cline now has comprehensive rules with full plan mode support, memory bank integration, workflow phases, and investigation-first guidelines.
 
 ### Required Files
 
 ```
-.clinerules                 # Cline adapter
+.clinerules                 # Comprehensive Cline rules
 ```
 
 ### Setup Steps
 
-1. **Configure .clinerules**
+1. **Verify .clinerules**
 
+The enhanced file includes:
+- Primary directive to read `@CLAUDE.md`
+- All 7 plan mode intake questions
+- Complete memory bank system documentation
+- Full workflow phases
+- Code quality standards
+- Investigation-before-answering rules
+- Quick reference checklists
+
+2. **Memory Bank Setup**
+
+```bash
+# Create memory bank files
+touch CLAUDE-activeContext.md
+touch CLAUDE-patterns.md
+touch CLAUDE-decisions.md
+touch CLAUDE-troubleshooting.md
 ```
-# Cline's Memory Bank
 
-Read and use @CLAUDE.md for instruction
+3. **Use @ References**
 
-## Additional Guidance
-- Follow docs/AGENT_HANDBOOK.md
-- Start in plan mode
-- Ask intake questions before coding
-- Use CLAUDE-*.md memory bank files
-```
-
-2. **Use Claude Memory Bank**
-
-Cline shares memory bank with Claude using CLAUDE-*.md files.
+In Cline:
+- `@CLAUDE.md` - Primary instructions
+- `@CLAUDE-activeContext.md` - Session state
+- `@filename` - Reference specific files
 
 ### Features Available
 
@@ -389,6 +417,9 @@ Cline shares memory bank with Claude using CLAUDE-*.md files.
 | Commands | ❌ None | Not supported |
 | Skills | ❌ None | Not supported |
 | MCP Servers | ⚠️ Partial | Depends on version |
+| Plan Mode | ✅ Full | Documented in rules |
+| Intake Questions | ✅ Full | All 7 questions included |
+| Workflow Phases | ✅ Full | All phases documented |
 
 ---
 
@@ -396,30 +427,52 @@ Cline shares memory bank with Claude using CLAUDE-*.md files.
 
 ### Overview
 
-Blackbox uses a minimal adapter file referencing the handbook.
+Blackbox AI now has comprehensive documentation with full plan mode support, complete memory bank system, all workflow phases, code quality standards, and extensive quick reference guides.
 
 ### Required Files
 
 ```
-BLACKBOX.md                 # Blackbox adapter
+BLACKBOX.md                 # Comprehensive Blackbox documentation
 ```
 
 ### Setup Steps
 
 1. **Verify BLACKBOX.md**
 
-```markdown
-# Blackbox Adapter
+The enhanced file includes:
+- Complete AI guidance with behavioral guardrails
+- All 7 plan mode intake questions with purpose descriptions
+- Full memory bank system with creation templates
+- Complete workflow phases with visual diagrams
+- Code quality standards (architecture, quality, security)
+- Command reference with fast/banned commands
+- Git conventional commit standards
+- Tech stack detection guide
+- Error handling procedures
+- Best practices summary
 
-Refer to `docs/AGENT_HANDBOOK.md` for repository policies.
-Start in plan mode, ask the required intake questions, and wait for
-answers before making changes.
-Keep commits small and update documentation when behavior changes.
+2. **Memory Bank Setup**
+
+```bash
+# Create memory bank files
+touch CLAUDE-activeContext.md
+touch CLAUDE-patterns.md
+touch CLAUDE-decisions.md
+touch CLAUDE-troubleshooting.md
 ```
 
-2. **Use Claude Memory Bank**
+3. **Initialize Active Context**
 
-Blackbox shares memory bank with Claude using CLAUDE-*.md files.
+The BLACKBOX.md includes a template for creating activeContext:
+```markdown
+# CLAUDE-activeContext.md
+
+## Current Session
+- **Date**: YYYY-MM-DD
+- **Goal**: [Primary objective]
+- **Branch**: [Git branch name]
+- **Status**: Ready / In Progress / Blocked
+```
 
 ### Features Available
 
@@ -429,6 +482,11 @@ Blackbox shares memory bank with Claude using CLAUDE-*.md files.
 | Memory Bank | ✅ Full | CLAUDE-*.md files |
 | Commands | ❌ None | Not supported |
 | Skills | ❌ None | Not supported |
+| Plan Mode | ✅ Full | Comprehensive documentation |
+| Intake Questions | ✅ Full | All 7 with purpose |
+| Workflow Phases | ✅ Full | Visual diagrams included |
+| Code Quality | ✅ Full | Architecture + Security |
+| Error Handling | ✅ Full | Procedures documented |
 
 ---
 
@@ -436,30 +494,47 @@ Blackbox shares memory bank with Claude using CLAUDE-*.md files.
 
 ### Overview
 
-Codex uses a minimal adapter file similar to Blackbox.
+OpenAI Codex now has comprehensive documentation with code generation rules, language-specific guidelines, full plan mode support, and memory bank integration.
 
 ### Required Files
 
 ```
-CODEX.md                    # Codex adapter
+CODEX.md                    # Comprehensive Codex documentation
 ```
 
 ### Setup Steps
 
 1. **Verify CODEX.md**
 
-```markdown
-# Codex Adapter
+The enhanced file includes:
+- Code-focused AI guidance
+- Code generation rules (style matching, error handling)
+- All 7 plan mode intake questions
+- Complete memory bank system documentation
+- Full workflow phases
+- Code quality standards
+- Language-specific guidelines (TypeScript, Python, PHP)
+- Security rules for code generation
+- Command reference
+- Git conventional commit standards
+- Quick reference checklists
 
-This repository follows the policies in `docs/AGENT_HANDBOOK.md`.
-Use `docs/WORKFLOW.md` to guide the implementation lifecycle.
-Start in plan mode, ask the required intake questions, and wait for
-answers before making changes.
+2. **Memory Bank Setup**
+
+```bash
+# Create memory bank files
+touch CLAUDE-activeContext.md
+touch CLAUDE-patterns.md
+touch CLAUDE-decisions.md
+touch CLAUDE-troubleshooting.md
 ```
 
-2. **Use Claude Memory Bank**
+3. **Language-Specific Guidelines**
 
-Codex shares memory bank with Claude using CLAUDE-*.md files.
+CODEX.md includes preferred patterns for:
+- **TypeScript/JavaScript**: Type safety, async/await, optional chaining
+- **Python**: Type hints, PEP 8, context managers
+- **PHP**: Strict types, PSR-12, type declarations
 
 ### Features Available
 
@@ -469,6 +544,10 @@ Codex shares memory bank with Claude using CLAUDE-*.md files.
 | Memory Bank | ✅ Full | CLAUDE-*.md files |
 | Commands | ❌ None | Not supported |
 | Skills | ❌ None | Not supported |
+| Plan Mode | ✅ Full | Comprehensive documentation |
+| Intake Questions | ✅ Full | All 7 questions |
+| Code Generation | ✅ Full | Language-specific guidelines |
+| Security Rules | ✅ Full | No hardcoded secrets |
 
 ---
 
@@ -539,6 +618,45 @@ cp CLAUDE-decisions.md GEMINI-decisions.md
 | Quick edits | **GitHub Copilot** | Fastest |
 | Strict instructions | **Gemini CLI** | No scope creep |
 | Lightweight | **Windsurf/Cline** | Simple setup |
+
+### Complete Feature Matrix
+
+| Feature | Claude | Cursor | Copilot | Gemini | Windsurf | Cline | Blackbox | Codex |
+|---------|--------|--------|---------|--------|----------|-------|----------|-------|
+| **Core** |
+| Plan Mode | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Intake Questions | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Workflow Phases | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Memory Bank | ✅ | ✅ | ⚠️ | ✅* | ✅ | ✅ | ✅ | ✅ |
+| **Advanced** |
+| Subagents | ✅ | ⚠️ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ❌ |
+| Commands | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Skills | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| MCP Servers | ✅ | ⚠️ | ❌ | ❌ | ⚠️ | ⚠️ | ❌ | ❌ |
+| **Documentation** |
+| Code Quality | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Git Standards | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Command Reference | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Quick Reference | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Specialized** |
+| Code Generation | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Language Guidelines | ✅ | ✅ | ✅ | ✅ | ⚠️ | ⚠️ | ⚠️ | ✅ |
+| Error Handling | ✅ | ✅ | ✅ | ✅ | ⚠️ | ⚠️ | ✅ | ⚠️ |
+
+Legend: ✅ Full | ⚠️ Partial | ❌ None | * = Separate prefix (GEMINI-)
+
+### Configuration File Quick Reference
+
+| Platform | Primary Config | Lines | Key Features |
+|----------|---------------|-------|--------------|
+| Claude Code | `CLAUDE.md` | 200+ | Full system with subagents |
+| Cursor | `.cursor/rules.md` | 250+ | Composer/Chat/Inline modes |
+| Copilot | `.github/copilot-instructions.md` | 300+ | Code generation guidelines |
+| Gemini | `GEMINI.md` | 50+ | Strict instruction mode |
+| Windsurf | `.windsurfrules` | 150+ | Complete workflow |
+| Cline | `.clinerules` | 120+ | @ reference support |
+| Blackbox | `BLACKBOX.md` | 400+ | Visual workflow diagrams |
+| Codex | `CODEX.md` | 250+ | Language-specific patterns |
 
 ---
 
