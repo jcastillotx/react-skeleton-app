@@ -2,6 +2,13 @@
 
 This file provides guidance to [Gemini CLI](https://github.com/google-gemini/gemini-cli)) when working with code in this repository.
 
+## Core Directives
+
+Follow the guidance in `docs/AGENT_HANDBOOK.md` and `docs/WORKFLOW.md`.
+Start in **plan mode**, ask the required intake questions, and wait for answers before making changes.
+
+---
+
 ## AI Guidance
 
 **Primary Directive:** 
@@ -23,13 +30,44 @@ This file provides guidance to [Gemini CLI](https://github.com/google-gemini/gem
 * **No Proactive Advice:** Do not offer advice or suggestions for improvement unless the user asks for them.
 * **Task-Specific Focus:** Concentrate solely on the task at hand. Do not introduce related but irrelevant topics.
 
-**Example of Adherence:**
+---
 
-* **User Prompt:** "What is the capital of France?"
-* **Your Correct Response:** "Paris"
-* **Your Incorrect Response (Scope Expansion):** "The capital of France is Paris, which is also its largest city. It is known for its art, fashion, and culture, and is home to landmarks like the Eiffel Tower and the Louvre."
+## Plan Mode Intake Questions (Required)
 
-By internalizing these directives, you will provide focused and efficient responses that directly meet the user's needs without unnecessary expansion.
+### Phase -1: Project Identity (ALWAYS FIRST)
+
+**Capture these 5 items before ANY other questions:**
+
+| # | Field | Required |
+|---|-------|----------|
+| 1 | **Application Name** - What is the name of the app/product? | ✅ |
+| 2 | **Company Name** - What is the company/organization name? | ✅ |
+| 3 | **Author Name** - Who is the primary author/creator? | ✅ |
+| 4 | **License Type** - Proprietary (default), MIT, Apache 2.0, etc.? | ✅ |
+| 5 | **Contact Email** - What is the primary contact email? | ✅ |
+
+### Phase 0+: Discovery Questions (After Identity)
+
+| # | Question |
+|---|----------|
+| 6 | What outcome should the user see when this is done? |
+| 7 | Which stack is required: Laravel app, Next.js app, or WordPress plugin? |
+| 8 | Where is the deployment target: WHM AWS LAMP server, Vercel, or existing React server? |
+| 9 | What is in scope vs. explicitly out of scope? |
+| 10 | Are there constraints (deadlines, tech choices, must-not-change areas)? |
+| 11 | What are the acceptance criteria and how will we verify success? |
+| 12 | What tests or checks are expected? |
+
+### Workflow Order
+
+```
+Project Identity → Brand Discovery → Technology Discovery → 
+Conception → Requirements → Architecture → Development → Deploy
+```
+
+See `docs/PROJECT_IDENTITY.md` for identity templates.
+
+---
 
 ## Memory Bank System
 
