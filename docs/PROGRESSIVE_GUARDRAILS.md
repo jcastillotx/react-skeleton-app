@@ -13,6 +13,17 @@ This document defines the guardrail system that progressively narrows from open 
 ║                         PROGRESSIVE GUARDRAILS FUNNEL                          ║
 ╠═══════════════════════════════════════════════════════════════════════════════╣
 ║                                                                                ║
+║   PHASE -1: PROJECT IDENTITY ★ ALWAYS FIRST ★                                 ║
+║   ════════════════════════════════════════════════════════════════════════    ║
+║   │ REQUIRED: Cannot proceed without these 5 items                         │   ║
+║   │ • Application Name                                                     │   ║
+║   │ • Company Name                                                         │   ║
+║   │ • Author Name                                                          │   ║
+║   │ • License Type (default: Proprietary)                                  │   ║
+║   │ • Contact Email                                                        │   ║
+║   └────────────────────────────────────────────────────────────────────────┘   ║
+║                                   │                                            ║
+║                                   ▼                                            ║
 ║   PHASE 0: BRAND DISCOVERY                                                     ║
 ║   ════════════════════════════════════════════════════════════════════════    ║
 ║   │ WIDEST: Explore all possibilities                                      │   ║

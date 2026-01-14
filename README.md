@@ -44,16 +44,52 @@ cp .env.example .env
 
 ```bash
 # Create initial planning documents
-mkdir -p docs/project
+mkdir -p docs/project assets/logo assets/media
 
-# Start with Brand Discovery (see execution guide below)
+# Start with Project Identity (see execution guide below)
 ```
 
 ---
 
 ## 📋 Execution Guide: Conception to Production
 
-### Phase 0: Brand & Design Discovery (REQUIRED FIRST)
+### Phase -1: Project Identity (ALWAYS FIRST)
+
+**Before ANY discovery, capture these 5 required items:**
+
+```markdown
+## Project Identity (Required)
+
+| Field | Value |
+|-------|-------|
+| **Application Name** | [Name of the app/product] |
+| **Company Name** | [Company or organization] |
+| **Author Name** | [Primary author/creator] |
+| **License Type** | Proprietary (default) / MIT / Apache 2.0 |
+| **Contact Email** | [Primary contact email] |
+```
+
+**AI Prompt to Start:**
+```
+I'm starting a new project. Before we begin any discovery, 
+I need to capture the project identity:
+
+1. What is the application name?
+2. What is the company/organization name?
+3. Who is the author/creator?
+4. What license type? (Proprietary is default for commercial projects)
+5. What is the primary contact email?
+```
+
+**After capturing identity, automatically generate:**
+- LICENSE file
+- README header
+- package.json/composer.json fields
+- File header templates
+
+---
+
+### Phase 0: Brand & Design Discovery
 
 **Before ANY development, complete brand discovery:**
 

@@ -37,17 +37,40 @@ You are a code-focused AI assistant. Your primary function is to generate, modif
 
 ## Plan Mode Intake Questions (Required)
 
-**CRITICAL**: Ask these questions before making ANY changes:
+**CRITICAL**: Ask these questions before making ANY changes.
+
+### Phase -1: Project Identity (ALWAYS FIRST)
+
+**Capture these 5 items before ANY other questions:**
+
+| # | Field | Required | Purpose |
+|---|-------|----------|---------|
+| 1 | **Application Name** | ✅ | Name of the app/product |
+| 2 | **Company Name** | ✅ | Company/organization name |
+| 3 | **Author Name** | ✅ | Primary author/creator |
+| 4 | **License Type** | ✅ | Proprietary (default), MIT, Apache 2.0, etc. |
+| 5 | **Contact Email** | ✅ | Primary contact email |
+
+### Phase 0+: Discovery Questions (After Identity)
 
 | # | Question | Purpose |
 |---|----------|---------|
-| 1 | What outcome should the user see when this is done? | Define success criteria |
-| 2 | Which stack is required: Laravel app, Next.js app, or WordPress plugin? | Technology selection |
-| 3 | Where is the deployment target: WHM AWS LAMP server, Vercel, or existing React server? | Infrastructure decisions |
-| 4 | What is in scope vs. explicitly out of scope? | Boundary definition |
-| 5 | Are there constraints (deadlines, tech choices, must-not-change areas)? | Risk identification |
-| 6 | What are the acceptance criteria and how will we verify success? | Quality gates |
-| 7 | What tests or checks are expected? | Verification strategy |
+| 6 | What outcome should the user see when this is done? | Define success criteria |
+| 7 | Which stack is required: Laravel app, Next.js app, or WordPress plugin? | Technology selection |
+| 8 | Where is the deployment target: WHM AWS LAMP server, Vercel, or existing React server? | Infrastructure decisions |
+| 9 | What is in scope vs. explicitly out of scope? | Boundary definition |
+| 10 | Are there constraints (deadlines, tech choices, must-not-change areas)? | Risk identification |
+| 11 | What are the acceptance criteria and how will we verify success? | Quality gates |
+| 12 | What tests or checks are expected? | Verification strategy |
+
+### Workflow Order
+
+```
+Project Identity → Brand Discovery → Technology Discovery → 
+Conception → Requirements → Architecture → Development → Deploy
+```
+
+See `docs/PROJECT_IDENTITY.md` for identity templates.
 
 ---
 

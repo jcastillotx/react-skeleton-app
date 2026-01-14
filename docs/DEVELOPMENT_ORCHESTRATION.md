@@ -9,19 +9,20 @@ This guide provides a comprehensive orchestration framework for AI-assisted deve
 ## Table of Contents
 
 1. [Orchestration Overview](#1-orchestration-overview)
-2. [Phase 0: Brand & Design Discovery](#2-phase-0-brand--design-discovery)
-3. [Phase 1: Conception](#3-phase-1-conception)
-4. [Phase 2: Requirements](#4-phase-2-requirements)
-5. [Phase 3: Architecture](#5-phase-3-architecture)
-6. [Phase 4: Planning](#6-phase-4-planning)
-7. [Phase 5: Development](#7-phase-5-development)
-8. [Phase 6: Testing](#8-phase-6-testing)
-9. [Phase 7: Security Audit](#9-phase-7-security-audit)
-10. [Phase 8: Code Review](#10-phase-8-code-review)
-11. [Phase 9: Deployment](#11-phase-9-deployment)
-12. [Phase 10: Monitoring](#12-phase-10-monitoring)
-13. [Agent Orchestration](#13-agent-orchestration)
-14. [Templates](#14-templates)
+2. [Phase -1: Project Identity](#2-phase--1-project-identity)
+3. [Phase 0: Brand & Design Discovery](#3-phase-0-brand--design-discovery)
+5. [Phase 2: Conception](#5-phase-2-conception)
+6. [Phase 3: Requirements](#6-phase-3-requirements)
+7. [Phase 4: Architecture](#7-phase-4-architecture)
+8. [Phase 5: Planning](#8-phase-5-planning)
+9. [Phase 6: Development](#9-phase-6-development)
+10. [Phase 7: Testing](#10-phase-7-testing)
+11. [Phase 8: Security Audit](#11-phase-8-security-audit)
+12. [Phase 9: Code Review](#12-phase-9-code-review)
+13. [Phase 10: Deployment](#13-phase-10-deployment)
+14. [Phase 11: Monitoring](#14-phase-11-monitoring)
+15. [Agent Orchestration](#15-agent-orchestration)
+16. [Templates](#16-templates)
 
 ---
 
@@ -73,19 +74,94 @@ Each phase has mandatory gates that must pass before proceeding:
 
 | Phase | Gate | Criteria |
 |-------|------|----------|
-| 0 → 1 | Concept Approval | Stakeholder sign-off |
-| 1 → 2 | Requirements Complete | All user stories defined |
-| 2 → 3 | Architecture Approved | Technical design reviewed |
-| 3 → 4 | Sprint Ready | Tasks estimated and prioritized |
-| 4 → 5 | Code Complete | All features implemented |
-| 5 → 6 | Tests Passing | >80% coverage, all tests green |
-| 6 → 7 | Security Cleared | No critical/high vulnerabilities |
-| 7 → 8 | Review Approved | All feedback addressed |
-| 8 → 9 | Deployed | Staging verified, production live |
+| -1 → 0 | Identity Complete | All 5 identity fields captured |
+| 0 → 1 | Brand Defined | Visual identity and tone established |
+| 1 → 2 | Tech Selected | Application type and stack confirmed |
+| 2 → 3 | Requirements Complete | All user stories defined |
+| 3 → 4 | Architecture Approved | Technical design reviewed |
+| 4 → 5 | Sprint Ready | Tasks estimated and prioritized |
+| 5 → 6 | Code Complete | All features implemented |
+| 6 → 7 | Tests Passing | >80% coverage, all tests green |
+| 7 → 8 | Security Cleared | No critical/high vulnerabilities |
+| 8 → 9 | Review Approved | All feedback addressed |
+| 9 → 10 | Deployed | Staging verified, production live |
 
 ---
 
-## 2. Phase 0: Conception
+## 2. Phase -1: Project Identity
+
+### Purpose
+Capture essential project metadata that will be used throughout all documentation, code files, and legal notices.
+
+### REQUIRED: Cannot Proceed Without
+
+This phase is **NON-NEGOTIABLE**. These 5 items must be captured before ANY other discovery.
+
+### Project Identity Questions
+
+| # | Field | Required | Default |
+|---|-------|----------|---------|
+| 1 | **Application Name** | ✅ | - |
+| 2 | **Company Name** | ✅ | - |
+| 3 | **Author Name** | ✅ | - |
+| 4 | **License Type** | ✅ | Proprietary |
+| 5 | **Contact Email** | ✅ | - |
+
+### Template: Project Identity
+
+```markdown
+## Project Identity
+
+| Field | Value |
+|-------|-------|
+| **Application Name** | [Name of the app/product] |
+| **Company Name** | [Company or organization] |
+| **Author Name** | [Primary author/creator] |
+| **License Type** | Proprietary |
+| **Copyright Year** | 2025 |
+| **Contact Email** | [email@example.com] |
+```
+
+### Generated Artifacts
+
+After capturing identity, automatically generate:
+
+| Artifact | Purpose |
+|----------|---------|
+| `LICENSE` | License file based on type selected |
+| `PROJECT_IDENTITY.json` | Machine-readable identity |
+| README header | Standard header with identity |
+| File headers | Source code comment headers |
+
+### Fallback Rules
+
+If client says "I don't know yet":
+- **Application Name**: Use code name or working title
+- **Company Name**: Use individual's name if sole proprietor
+- **Author Name**: Use whoever is leading the project
+- **License**: Default to "Proprietary"
+- **Contact Email**: ⚠️ REQUIRED - cannot proceed without
+
+### Gate Criteria
+
+Before proceeding to Phase 0 (Brand Discovery):
+- [ ] Application Name captured
+- [ ] Company Name captured
+- [ ] Author Name captured
+- [ ] License Type selected
+- [ ] Contact Email captured
+
+See `docs/PROJECT_IDENTITY.md` for detailed templates.
+
+---
+
+## 3. Phase 0: Brand & Design Discovery
+
+See `docs/BRAND_AND_DESIGN_DISCOVERY.md` for detailed brand intake questions.
+
+---
+
+## 4. Phase 1: Conception
 
 ### Purpose
 Transform initial ideas into actionable project concepts.
