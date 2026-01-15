@@ -1,0 +1,130 @@
+{
+  "version": "1.0.0",
+  "description": "Auto-detection rules for loading coding standards based on tech stack",
+  "detection_rules": {
+    "wordpress": {
+      "patterns": [
+        "wordpress",
+        "wp-content",
+        "wp-admin",
+        "functions.php",
+        "add_action",
+        "add_filter",
+        "divi",
+        "elementor",
+        "woocommerce"
+      ],
+      "standards": [
+        "skills/wordpress-best-practices/AGENTS.md",
+        "skills/php-best-practices/AGENTS.md",
+        "skills/mysql-best-practices/AGENTS.md"
+      ]
+    },
+    "nextjs": {
+      "patterns": [
+        "next.js",
+        "nextjs",
+        "next/",
+        "app router",
+        "server component",
+        "use client",
+        "use server",
+        "vercel"
+      ],
+      "standards": [
+        "skills/nextjs-best-practices/AGENTS.md",
+        "skills/react-best-practices/AGENTS.md",
+        "skills/javascript-best-practices/AGENTS.md"
+      ]
+    },
+    "react": {
+      "patterns": [
+        "react",
+        "useState",
+        "useEffect",
+        "jsx",
+        "tsx"
+      ],
+      "standards": [
+        "skills/react-best-practices/AGENTS.md",
+        "skills/javascript-best-practices/AGENTS.md"
+      ]
+    },
+    "laravel": {
+      "patterns": [
+        "laravel",
+        "eloquent",
+        "artisan",
+        "blade",
+        "livewire",
+        "app/Models",
+        "app/Http"
+      ],
+      "standards": [
+        "skills/laravel-best-practices/AGENTS.md",
+        "skills/php-best-practices/AGENTS.md",
+        "skills/mysql-best-practices/AGENTS.md"
+      ]
+    },
+    "supabase": {
+      "patterns": [
+        "supabase",
+        "row level security",
+        "rls",
+        "auth.uid",
+        "edge function",
+        "@supabase/supabase-js"
+      ],
+      "standards": [
+        "skills/supabase-best-practices/AGENTS.md"
+      ]
+    },
+    "mysql": {
+      "patterns": [
+        "mysql",
+        "mysqld",
+        "my.cnf"
+      ],
+      "standards": [
+        "skills/mysql-best-practices/AGENTS.md"
+      ]
+    },
+    "mariadb": {
+      "patterns": [
+        "mariadb",
+        "galera",
+        "aria",
+        "columnstore"
+      ],
+      "standards": [
+        "skills/mariadb-best-practices/AGENTS.md",
+        "skills/mysql-best-practices/AGENTS.md"
+      ]
+    },
+    "php": {
+      "patterns": [
+        ".php",
+        "composer.json",
+        "phpunit"
+      ],
+      "standards": [
+        "skills/php-best-practices/AGENTS.md"
+      ]
+    },
+    "javascript": {
+      "patterns": [
+        ".js",
+        ".ts",
+        "package.json",
+        "node_modules"
+      ],
+      "standards": [
+        "skills/javascript-best-practices/AGENTS.md"
+      ]
+    }
+  },
+  "usage": {
+    "description": "Read TECHSTACK.md to identify the project's tech stack, then load the corresponding AGENTS.md files for coding standards.",
+    "example": "If TECHSTACK.md mentions 'WordPress' and 'MySQL', load wordpress-best-practices, php-best-practices, and mysql-best-practices."
+  }
+}
