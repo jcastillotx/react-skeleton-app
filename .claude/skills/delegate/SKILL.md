@@ -24,6 +24,47 @@ Parse the task description to identify:
 - **Action**: implement, review, test, refactor, analyze, document
 - **Technology**: React, Django, Node, Python, etc. (if detectable from codebase)
 
+### Step 1.5: Load Coding Standards
+
+Before delegating, auto-inject relevant coding standards based on the project's tech stack:
+
+1. Read `.claude/config/coding-standards.json` for detection rules
+2. Check `TECHSTACK.md` or codebase patterns to identify technologies
+3. Load matching AGENTS.md files as additional context for the subagent
+
+**Detection Rules:**
+
+| Pattern Detected | Standards Loaded |
+|------------------|------------------|
+| WordPress, wp-content, Divi, Elementor | wordpress, php, mysql |
+| Next.js, App Router, use client | nextjs, react, javascript |
+| Laravel, Eloquent, Blade, Livewire | laravel, php, mysql |
+| Supabase, RLS, auth.uid() | supabase |
+| MariaDB, Galera | mariadb, mysql |
+| React, useState, JSX | react, javascript |
+| PHP, composer.json | php |
+| MySQL, my.cnf | mysql |
+
+**Include in Subagent Prompt:**
+
+```markdown
+## Coding Standards
+
+Follow these coding standards for this task. Focus on CRITICAL and HIGH impact rules:
+
+[Include relevant AGENTS.md content here]
+
+Key rules to follow:
+- [List 3-5 most relevant CRITICAL rules from loaded standards]
+```
+
+**Example:**
+If `TECHSTACK.md` mentions "Next.js" and "Supabase":
+- Load: `skills/nextjs-best-practices/AGENTS.md`
+- Load: `skills/react-best-practices/AGENTS.md`
+- Load: `skills/javascript-best-practices/AGENTS.md`
+- Load: `skills/supabase-best-practices/AGENTS.md`
+
 ### Step 2: Check Parallel Execution Slots
 
 Read `CLAUDE-activeContext.md` to check parallel execution tracking:
@@ -87,8 +128,17 @@ Task:
     ## Task
     [Full task description from user]
 
+    ## Coding Standards
+    Follow these coding standards for this task. Focus on CRITICAL and HIGH impact rules:
+
+    [Include relevant AGENTS.md content based on detected tech stack]
+
+    Key rules to enforce:
+    - [List 3-5 most relevant CRITICAL rules]
+
     ## Constraints
     - Follow patterns in CLAUDE-patterns.md
+    - Follow coding standards loaded above
     - Update CLAUDE-activeContext.md when complete
     - Report findings back to main agent
 

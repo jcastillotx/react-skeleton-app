@@ -139,7 +139,29 @@ Check for planning artifacts:
 - [ ] At least one task ready for development
 ```
 
-### Gates 5-10: Development through Monitoring
+### Gate: Code Complete (5 → 6)
+```
+Check development is complete:
+- [ ] All planned features implemented
+- [ ] Code compiles without errors
+```
+
+### Gate: Standards Compliance (5 → 6)
+```
+Check code against loaded coding standards:
+- [ ] Code follows CRITICAL rules from applicable standards
+- [ ] No obvious violations of HIGH impact rules
+- [ ] Standards compliance noted in PR descriptions
+
+How to validate:
+1. Read `.claude/config/coding-standards.json` for detection rules
+2. Identify technologies from TECHSTACK.md
+3. Load matching `skills/*/AGENTS.md` files
+4. Review code against CRITICAL and HIGH impact rules
+5. Flag any violations for remediation before testing phase
+```
+
+### Gates 6-10: Testing through Monitoring
 ```
 Check appropriate artifacts and completion status for each phase.
 ```
