@@ -1,6 +1,15 @@
 {
   "model": "sonnet",
   "cleanupPeriodDays": 365,
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(npm *)",
+      "Bash(fd *)",
+      "Bash(rg *)"
+    ],
+    "deny": []
+  },
   "hooks": {
     "Stop": [
       {

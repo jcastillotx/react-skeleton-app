@@ -20,3 +20,11 @@ logs/
 .env
 .env.local
 .env.*.local
+
+# Claude Code memory bank (local session state)
+CLAUDE-activeContext.md
+CLAUDE-patterns.md
+CLAUDE-decisions.md
+CLAUDE-troubleshooting.md
+CLAUDE-config-variables.md
+CLAUDE-temp.md
