@@ -81,10 +81,75 @@ Each phase has mandatory gates that must pass before proceeding:
 | 3 → 4 | Architecture Approved | Technical design reviewed |
 | 4 → 5 | Sprint Ready | Tasks estimated and prioritized |
 | 5 → 6 | Code Complete | All features implemented |
+| 5 → 6 | Standards Compliance | Code follows CRITICAL/HIGH rules |
 | 6 → 7 | Tests Passing | >80% coverage, all tests green |
 | 7 → 8 | Security Cleared | No critical/high vulnerabilities |
 | 8 → 9 | Review Approved | All feedback addressed |
 | 9 → 10 | Deployed | Staging verified, production live |
+
+### Coding Standards Integration
+
+The orchestration system automatically loads and enforces coding standards based on the project's tech stack.
+
+#### Auto-Detection
+
+Standards are detected from `TECHSTACK.md` patterns using `.claude/config/coding-standards.json`:
+
+| Technology Detected | Standards Loaded |
+|---------------------|------------------|
+| WordPress, wp-content, Divi, Elementor | `wordpress-best-practices`, `php-best-practices`, `mysql-best-practices` |
+| Next.js, App Router, use client, Vercel | `nextjs-best-practices`, `react-best-practices`, `javascript-best-practices` |
+| Laravel, Eloquent, Blade, Livewire | `laravel-best-practices`, `php-best-practices`, `mysql-best-practices` |
+| Supabase, RLS, auth.uid(), Edge Functions | `supabase-best-practices` |
+| MariaDB, Galera, Aria | `mariadb-best-practices`, `mysql-best-practices` |
+| React, useState, useEffect, JSX | `react-best-practices`, `javascript-best-practices` |
+| PHP, composer.json | `php-best-practices` |
+| MySQL, my.cnf | `mysql-best-practices` |
+
+#### Enforcement Points
+
+1. **Delegate Skill**: Automatically injects relevant standards into subagent prompts
+2. **Development Phase Gate (5 → 6)**: Validates code against CRITICAL and HIGH impact rules before testing phase
+
+#### Standards Structure
+
+Each technology has a dedicated skill folder in `skills/`:
+
+```
+skills/
+├── javascript-best-practices/    # 24 rules
+├── php-best-practices/           # 24 rules
+├── react-best-practices/         # 47 rules
+├── nextjs-best-practices/        # 24 rules
+├── laravel-best-practices/       # 26 rules
+├── wordpress-best-practices/     # 25 rules
+├── mysql-best-practices/         # 24 rules
+├── mariadb-best-practices/       # 22 rules
+└── supabase-best-practices/      # 22 rules
+```
+
+#### Rule Impact Levels
+
+| Level | Description |
+|-------|-------------|
+| **CRITICAL** | Must fix - security vulnerabilities, data loss, severe performance issues |
+| **HIGH** | Should fix - significant bugs, poor patterns, maintainability concerns |
+| **MEDIUM-HIGH** | Recommended - best practices, code quality improvements |
+| **MEDIUM** | Consider - optimizations, cleaner patterns |
+| **LOW-MEDIUM** | Nice to have - style preferences, minor improvements |
+
+#### Usage
+
+The delegate skill (`/delegate`) automatically:
+1. Reads `TECHSTACK.md` to detect technologies
+2. Loads matching `skills/*/AGENTS.md` files
+3. Includes key CRITICAL rules in subagent prompts
+
+The orchestrate skill (`/orchestrate`) validates:
+1. Standards compliance before transitioning from Development to Testing phase
+2. Flags CRITICAL rule violations for remediation
+
+See `.claude/config/coding-standards.json` for detection configuration.
 
 ---
 
