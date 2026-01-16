@@ -730,4 +730,4 @@ Before proceeding to Architecture phase:
 ---
 
 *Complete this discovery BEFORE detailed requirements.*
-*See `docs/DEVELOPMENT_ORCHESTRATION.md` for the full workflow.*
+*See `DEVELOPMENT_ORCHESTRATION.md` for the full workflow.*

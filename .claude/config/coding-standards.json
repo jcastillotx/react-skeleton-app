@@ -15,9 +15,9 @@
         "woocommerce"
       ],
       "standards": [
-        "skills/wordpress-best-practices/AGENTS.md",
-        "skills/php-best-practices/AGENTS.md",
-        "skills/mysql-best-practices/AGENTS.md"
+        "setup/skills/wordpress-best-practices/AGENTS.md",
+        "setup/skills/php-best-practices/AGENTS.md",
+        "setup/skills/mysql-best-practices/AGENTS.md"
       ]
     },
     "nextjs": {
@@ -32,9 +32,9 @@
         "vercel"
       ],
       "standards": [
-        "skills/nextjs-best-practices/AGENTS.md",
-        "skills/react-best-practices/AGENTS.md",
-        "skills/javascript-best-practices/AGENTS.md"
+        "setup/skills/nextjs-best-practices/AGENTS.md",
+        "setup/skills/react-best-practices/AGENTS.md",
+        "setup/skills/javascript-best-practices/AGENTS.md"
       ]
     },
     "react": {
@@ -46,8 +46,8 @@
         "tsx"
       ],
       "standards": [
-        "skills/react-best-practices/AGENTS.md",
-        "skills/javascript-best-practices/AGENTS.md"
+        "setup/skills/react-best-practices/AGENTS.md",
+        "setup/skills/javascript-best-practices/AGENTS.md"
       ]
     },
     "laravel": {
@@ -61,9 +61,9 @@
         "app/Http"
       ],
       "standards": [
-        "skills/laravel-best-practices/AGENTS.md",
-        "skills/php-best-practices/AGENTS.md",
-        "skills/mysql-best-practices/AGENTS.md"
+        "setup/skills/laravel-best-practices/AGENTS.md",
+        "setup/skills/php-best-practices/AGENTS.md",
+        "setup/skills/mysql-best-practices/AGENTS.md"
       ]
     },
     "supabase": {
@@ -76,7 +76,7 @@
         "@supabase/supabase-js"
       ],
       "standards": [
-        "skills/supabase-best-practices/AGENTS.md"
+        "setup/skills/supabase-best-practices/AGENTS.md"
       ]
     },
     "mysql": {
@@ -86,7 +86,7 @@
         "my.cnf"
       ],
       "standards": [
-        "skills/mysql-best-practices/AGENTS.md"
+        "setup/skills/mysql-best-practices/AGENTS.md"
       ]
     },
     "mariadb": {
@@ -97,8 +97,8 @@
         "columnstore"
       ],
       "standards": [
-        "skills/mariadb-best-practices/AGENTS.md",
-        "skills/mysql-best-practices/AGENTS.md"
+        "setup/skills/mariadb-best-practices/AGENTS.md",
+        "setup/skills/mysql-best-practices/AGENTS.md"
       ]
     },
     "php": {
@@ -108,7 +108,7 @@
         "phpunit"
       ],
       "standards": [
-        "skills/php-best-practices/AGENTS.md"
+        "setup/skills/php-best-practices/AGENTS.md"
       ]
     },
     "javascript": {
@@ -119,7 +119,7 @@
         "node_modules"
       ],
       "standards": [
-        "skills/javascript-best-practices/AGENTS.md"
+        "setup/skills/javascript-best-practices/AGENTS.md"
       ]
     }
   },

@@ -30,7 +30,7 @@ Claude Code has the **most complete feature support** for this boilerplate, incl
 .claude/
 ├── settings.json         # Permissions and settings
 ├── settings.local.json   # Local overrides
-├── agents/               # Subagent definitions
+├── ../agents/               # Subagent definitions
 │   ├── code-searcher.md
 │   ├── memory-bank-synchronizer.md
 │   └── ux-design-expert.md
@@ -41,7 +41,7 @@ Claude Code has the **most complete feature support** for this boilerplate, incl
 │   ├── promptengineering/
 │   ├── refactor/
 │   └── security/
-├── skills/               # SKILL.md definitions
+├── ../skills/               # SKILL.md definitions
 │   └── claude-docs-consultant/
 │       └── SKILL.md
 └── mcp/                  # MCP server configs
@@ -673,11 +673,11 @@ Legend: ✅ Full | ⚠️ Partial | ❌ None | * = Separate prefix (GEMINI-)
 
 ### Before First Task
 
-- [ ] Read `docs/AGENT_HANDBOOK.md`
-- [ ] Read `docs/WORKFLOW.md`
+- [ ] Read `AGENT_HANDBOOK.md`
+- [ ] Read `WORKFLOW.md`
 - [ ] Check `CLAUDE-activeContext.md` (if exists)
 - [ ] Understand tech stack from `TECHSTACK.md`
 
 ---
 
-*For full workflow documentation, see `docs/VIBE_CODING_WORKFLOW.md`*
+*For full workflow documentation, see `VIBE_CODING_WORKFLOW.md`*

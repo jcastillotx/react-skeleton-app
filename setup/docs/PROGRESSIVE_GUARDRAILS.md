@@ -665,4 +665,4 @@ Is the request about something from a PREVIOUS phase?
 ---
 
 *This progressive guardrail system ensures creative exploration early while maintaining execution discipline later.*
-*Apply at every phase transition in `docs/DEVELOPMENT_ORCHESTRATION.md`*
+*Apply at every phase transition in `DEVELOPMENT_ORCHESTRATION.md`*

@@ -96,7 +96,7 @@ I need to capture the project identity:
 ```markdown
 ## Start Brand Discovery
 
-1. Open: docs/BRAND_AND_DESIGN_DISCOVERY.md
+1. Open: setup/docs/BRAND_AND_DESIGN_DISCOVERY.md
 2. Complete ALL intake questions:
    - Brand Identity (Questions 1-10)
    - Visual Preferences (Questions 11-16)
@@ -108,7 +108,7 @@ I need to capture the project identity:
    - [ ] Typography choices
    - [ ] Inspiration images
    - [ ] Existing brand guide (if any)
-4. Create: docs/project/BRAND_GUIDE.md
+4. Create: setup/docs/project/BRAND_GUIDE.md
 5. Create: assets/logo/ and assets/media/
 ```
 
@@ -116,7 +116,7 @@ I need to capture the project identity:
 ```
 I'm starting a new project. Let's begin with brand discovery.
 Please ask me the brand discovery intake questions from 
-docs/BRAND_AND_DESIGN_DISCOVERY.md one section at a time.
+setup/docs/BRAND_AND_DESIGN_DISCOVERY.md one section at a time.
 ```
 
 ### Phase 1: Project Conception
@@ -124,9 +124,9 @@ docs/BRAND_AND_DESIGN_DISCOVERY.md one section at a time.
 ```markdown
 ## Create Project Brief
 
-1. Open: docs/DEVELOPMENT_ORCHESTRATION.md
+1. Open: setup/docs/DEVELOPMENT_ORCHESTRATION.md
 2. Complete Phase 0: Conception questions
-3. Create: docs/project/PROJECT_BRIEF.md
+3. Create: setup/docs/project/PROJECT_BRIEF.md
 4. Get stakeholder approval
 ```
 
@@ -134,7 +134,7 @@ docs/BRAND_AND_DESIGN_DISCOVERY.md one section at a time.
 ```
 Based on our brand discovery, let's create the project brief.
 Ask me the conception intake questions and help me document
-the project brief in docs/project/PROJECT_BRIEF.md
+the project brief in setup/docs/project/PROJECT_BRIEF.md
 ```
 
 ### Phase 2: Requirements Gathering
@@ -145,15 +145,15 @@ the project brief in docs/project/PROJECT_BRIEF.md
 1. Create user stories with acceptance criteria
 2. Define functional requirements
 3. Define non-functional requirements
-4. Create: docs/project/USER_STORIES.md
-5. Create: docs/project/REQUIREMENTS.md
+4. Create: setup/docs/project/USER_STORIES.md
+5. Create: setup/docs/project/REQUIREMENTS.md
 ```
 
 **AI Prompt:**
 ```
 Let's define the requirements for this project.
 Help me create user stories with acceptance criteria
-following the template in docs/DEVELOPMENT_ORCHESTRATION.md
+following the template in setup/docs/DEVELOPMENT_ORCHESTRATION.md
 ```
 
 ### Phase 3: Architecture & Planning
@@ -161,9 +161,9 @@ following the template in docs/DEVELOPMENT_ORCHESTRATION.md
 ```markdown
 ## Design Architecture
 
-1. Create: docs/project/ARCHITECTURE.md
-2. Create ADRs in docs/project/adr/
-3. Create: docs/project/SPRINT_PLAN.md
+1. Create: setup/docs/project/ARCHITECTURE.md
+2. Create ADRs in setup/docs/project/adr/
+3. Create: setup/docs/project/SPRINT_PLAN.md
 4. Set up project board (Linear/Jira/GitHub)
 ```
 
@@ -220,7 +220,7 @@ Run the Playwright MCP for E2E testing.
 1. Run SAST scan (SonarQube/Semgrep)
 2. Run dependency scan (Snyk)
 3. Review OWASP Top 10
-4. Create: docs/project/SECURITY_AUDIT.md
+4. Create: setup/docs/project/SECURITY_AUDIT.md
 ```
 
 **AI Prompt:**
@@ -276,25 +276,29 @@ then to production. Help me run through the deployment checklist.
 
 ```
 your-project/
-├── docs/
-│   ├── project/                    # YOUR PROJECT DOCS
-│   │   ├── BRAND_GUIDE.md          # Brand guidelines
-│   │   ├── PROJECT_BRIEF.md        # Project overview
-│   │   ├── USER_STORIES.md         # Requirements
-│   │   ├── ARCHITECTURE.md         # Technical design
-│   │   ├── SPRINT_PLAN.md          # Sprint planning
-│   │   └── adr/                    # Architecture decisions
-│   ├── AGENT_HANDBOOK.md           # AI behavior rules
-│   ├── DEVELOPMENT_ORCHESTRATION.md # Full workflow
-│   ├── BRAND_AND_DESIGN_DISCOVERY.md # Brand intake
-│   ├── VIBE_CODING_WORKFLOW.md     # Master guide
-│   └── SUBAGENTS_AND_MCP_SERVERS.md # Tools catalog
+├── setup/                          # SETUP & TEMPLATE FILES
+│   ├── docs/                       # Documentation
+│   │   ├── project/                # YOUR PROJECT DOCS
+│   │   │   ├── BRAND_GUIDE.md      # Brand guidelines
+│   │   │   ├── PROJECT_BRIEF.md    # Project overview
+│   │   │   └── adr/                # Architecture decisions
+│   │   ├── AGENT_HANDBOOK.md       # AI behavior rules
+│   │   ├── DEVELOPMENT_ORCHESTRATION.md # Full workflow
+│   │   ├── BRAND_AND_DESIGN_DISCOVERY.md # Brand intake
+│   │   └── VIBE_CODING_WORKFLOW.md # Master guide
+│   ├── examples/                   # CLAUDE.md templates
+│   ├── agents/                     # Agent personas
+│   ├── skills/                     # Coding standards & skills
+│   ├── tools/                      # Helper tools
+│   └── scripts/                    # Utility scripts
 ├── assets/
 │   ├── logo/                       # Logo files
 │   └── media/                      # Brand imagery
 ├── .claude/
 │   ├── mcp/                        # MCP server configs
+│   ├── skills/                     # Claude skills
 │   └── agents/                     # Subagent definitions
+├── CLAUDE.md                       # AI instructions (stays at root)
 ├── CLAUDE-activeContext.md         # Current session state
 ├── CLAUDE-patterns.md              # Code patterns
 ├── CLAUDE-decisions.md             # Decisions log
@@ -335,23 +339,23 @@ npm install -g sonarqube-mcp-server
 ### Core Workflow
 | Document | Purpose |
 |----------|---------|
-| [Development Orchestration](docs/DEVELOPMENT_ORCHESTRATION.md) | Full lifecycle phases |
-| [Brand Discovery](docs/BRAND_AND_DESIGN_DISCOVERY.md) | Brand intake & design system |
-| [Vibe Coding Workflow](docs/VIBE_CODING_WORKFLOW.md) | Master reference guide |
-| [Quick Start](docs/QUICK_START.md) | 5-minute getting started |
+| [Development Orchestration](setup/docs/DEVELOPMENT_ORCHESTRATION.md) | Full lifecycle phases |
+| [Brand Discovery](setup/docs/BRAND_AND_DESIGN_DISCOVERY.md) | Brand intake & design system |
+| [Vibe Coding Workflow](setup/docs/VIBE_CODING_WORKFLOW.md) | Master reference guide |
+| [Quick Start](setup/docs/QUICK_START.md) | 5-minute getting started |
 
 ### Platform Setup
 | Document | Purpose |
 |----------|---------|
-| [Platform Setup](docs/PLATFORM_SETUP.md) | IDE-specific configuration |
-| [MCP Servers Guide](docs/SUBAGENTS_AND_MCP_SERVERS.md) | Tools & integrations |
+| [Platform Setup](setup/docs/PLATFORM_SETUP.md) | IDE-specific configuration |
+| [MCP Servers Guide](setup/docs/SUBAGENTS_AND_MCP_SERVERS.md) | Tools & integrations |
 
 ### Policies
 | Document | Purpose |
 |----------|---------|
-| [Agent Handbook](docs/AGENT_HANDBOOK.md) | AI behavior rules |
-| [Workflow](docs/WORKFLOW.md) | Phased build process |
-| [Versioning](docs/VERSIONING.md) | SemVer policy |
+| [Agent Handbook](setup/docs/AGENT_HANDBOOK.md) | AI behavior rules |
+| [Workflow](setup/docs/WORKFLOW.md) | Phased build process |
+| [Versioning](setup/docs/VERSIONING.md) | SemVer policy |
 
 ---
 
@@ -364,7 +368,7 @@ npm install -g sonarqube-mcp-server
 mkdir -p docs/project assets/logo assets/media
 
 # 2. Create brand guide from template
-cp docs/BRAND_AND_DESIGN_DISCOVERY.md docs/project/BRAND_DISCOVERY_RESPONSES.md
+cp setup/docs/BRAND_AND_DESIGN_DISCOVERY.md setup/docs/project/BRAND_DISCOVERY_RESPONSES.md
 
 # 3. Start memory bank
 echo "# Active Context\n\n## Current Session\n- Date: $(date +%Y-%m-%d)\n- Goal: Project Setup" > CLAUDE-activeContext.md
@@ -446,13 +450,13 @@ for the current state and help me with the next steps.
 ### Code Review
 ```
 Please review this code against our quality checklist in
-docs/AGENT_HANDBOOK.md and the patterns in CLAUDE-patterns.md.
+setup/docs/AGENT_HANDBOOK.md and the patterns in CLAUDE-patterns.md.
 ```
 
 ### Security Audit
 ```
 Run a security audit on this codebase following the checklist
-in docs/DEVELOPMENT_ORCHESTRATION.md Phase 6.
+in setup/docs/DEVELOPMENT_ORCHESTRATION.md Phase 6.
 ```
 
 ### Deployment
@@ -465,9 +469,9 @@ checklist and help verify each step.
 
 ## 📖 Additional Resources
 
-- **Agent Library**: `agents/` - Pre-built agent personas
-- **Skills**: `skills/` - Security and pentest skills
-- **CLAUDE.md Examples**: `Guide On CLAUDE.md/` - Templates and examples
+- **Agent Library**: `setup/agents/` - Pre-built agent personas
+- **Skills**: `setup/skills/` - Security and pentest skills
+- **CLAUDE.md Examples**: `setup/examples/` - Templates and examples
 - **Changelog**: `CHANGELOG.md` - Version history
 
 ---
@@ -485,4 +489,4 @@ checklist and help verify each step.
 ---
 
 > **Ready to start?** Begin with brand discovery:
-> Open `docs/BRAND_AND_DESIGN_DISCOVERY.md` and complete the intake questions.
+> Open `setup/docs/BRAND_AND_DESIGN_DISCOVERY.md` and complete the intake questions.

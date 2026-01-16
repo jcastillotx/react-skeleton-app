@@ -47,8 +47,8 @@ Conception → Requirements → Architecture → Planning →
 Development → Testing → Security → Code Review → Deploy → Monitor
 ```
 
-See `docs/PROJECT_IDENTITY.md` for detailed project identity templates.
-See `docs/DEVELOPMENT_ORCHESTRATION.md` for the complete lifecycle.
+See `PROJECT_IDENTITY.md` for detailed project identity templates.
+See `DEVELOPMENT_ORCHESTRATION.md` for the complete lifecycle.
 
 ## Architecture & Boundaries
 - Respect module boundaries and avoid tight coupling.

@@ -120,14 +120,14 @@ Check for technology decisions:
 
 ### Gate: Requirements Complete (2 → 3)
 ```
-Check docs/USER_STORIES.md or equivalent:
+Check setup/docs/USER_STORIES.md or equivalent:
 - [ ] At least one user story defined
 - [ ] Acceptance criteria included
 ```
 
 ### Gate: Architecture Approved (3 → 4)
 ```
-Check docs/ARCHITECTURE.md or equivalent:
+Check setup/docs/ARCHITECTURE.md or equivalent:
 - [ ] High-level design documented
 - [ ] Key components identified
 ```
@@ -156,7 +156,7 @@ Check code against loaded coding standards:
 How to validate:
 1. Read `.claude/config/coding-standards.json` for detection rules
 2. Identify technologies from TECHSTACK.md
-3. Load matching `skills/*/AGENTS.md` files
+3. Load matching `setup/skills/*/AGENTS.md` files
 4. Review code against CRITICAL and HIGH impact rules
 5. Flag any violations for remediation before testing phase
 ```
