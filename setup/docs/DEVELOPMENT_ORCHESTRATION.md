@@ -113,10 +113,10 @@ Standards are detected from `TECHSTACK.md` patterns using `.claude/config/coding
 
 #### Standards Structure
 
-Each technology has a dedicated skill folder in `skills/`:
+Each technology has a dedicated skill folder in `../skills/`:
 
 ```
-skills/
+../skills/
 ├── javascript-best-practices/    # 24 rules
 ├── php-best-practices/           # 24 rules
 ├── react-best-practices/         # 47 rules
@@ -142,7 +142,7 @@ skills/
 
 The delegate skill (`/delegate`) automatically:
 1. Reads `TECHSTACK.md` to detect technologies
-2. Loads matching `skills/*/AGENTS.md` files
+2. Loads matching `../skills/*/AGENTS.md` files
 3. Includes key CRITICAL rules in subagent prompts
 
 The orchestrate skill (`/orchestrate`) validates:
@@ -216,13 +216,13 @@ Before proceeding to Phase 0 (Brand Discovery):
 - [ ] License Type selected
 - [ ] Contact Email captured
 
-See `docs/PROJECT_IDENTITY.md` for detailed templates.
+See `PROJECT_IDENTITY.md` for detailed templates.
 
 ---
 
 ## 3. Phase 0: Brand & Design Discovery
 
-See `docs/BRAND_AND_DESIGN_DISCOVERY.md` for detailed brand intake questions.
+See `BRAND_AND_DESIGN_DISCOVERY.md` for detailed brand intake questions.
 
 ---
 
@@ -1060,5 +1060,5 @@ project/
 
 ---
 
-*For agent definitions, see `agents/orchestration/`*
-*For MCP server configurations, see `docs/SUBAGENTS_AND_MCP_SERVERS.md`*
+*For agent definitions, see `../agents/orchestration/`*
+*For MCP server configurations, see `SUBAGENTS_AND_MCP_SERVERS.md`*

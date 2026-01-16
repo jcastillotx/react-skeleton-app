@@ -60,10 +60,10 @@ Key rules to follow:
 
 **Example:**
 If `TECHSTACK.md` mentions "Next.js" and "Supabase":
-- Load: `skills/nextjs-best-practices/AGENTS.md`
-- Load: `skills/react-best-practices/AGENTS.md`
-- Load: `skills/javascript-best-practices/AGENTS.md`
-- Load: `skills/supabase-best-practices/AGENTS.md`
+- Load: `setup/skills/nextjs-best-practices/AGENTS.md`
+- Load: `setup/skills/react-best-practices/AGENTS.md`
+- Load: `setup/skills/javascript-best-practices/AGENTS.md`
+- Load: `setup/skills/supabase-best-practices/AGENTS.md`
 
 ### Step 2: Check Parallel Execution Slots
 
@@ -92,7 +92,7 @@ Read `CLAUDE-activeContext.md` to check parallel execution tracking:
 2. **Domain match**: Task domain matches agent specialty → use domain expert
 3. **Universal fallback**: No specialist → use general-purpose agent
 
-#### Available Agents (from `agents/critical/`)
+#### Available Agents (from `setup/agents/critical/`)
 
 | Agent | Specialty | Use When |
 |-------|-----------|----------|

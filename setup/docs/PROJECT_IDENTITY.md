@@ -372,4 +372,4 @@ Before proceeding to Brand Discovery:
 ---
 
 *This is Phase -1: The absolute first step before any other discovery.*
-*See `docs/DEVELOPMENT_ORCHESTRATION.md` for the complete workflow.*
+*See `DEVELOPMENT_ORCHESTRATION.md` for the complete workflow.*

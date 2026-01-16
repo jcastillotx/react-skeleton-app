@@ -48,9 +48,9 @@ This boilerplate provides **governance templates for AI-assisted development** w
 ```
 /
 ├── .claude/                    # Claude Code specific configs
-│   ├── agents/                 # Subagent definitions
+│   ├── ../agents/                 # Subagent definitions
 │   ├── commands/               # Slash commands
-│   ├── skills/                 # SKILL.md definitions
+│   ├── ../skills/                 # SKILL.md definitions
 │   ├── mcp/                    # MCP server configs
 │   └── settings.json           # Claude settings
 ├── .cursor/                    # Cursor IDE configs
@@ -58,7 +58,7 @@ This boilerplate provides **governance templates for AI-assisted development** w
 ├── .github/                    # GitHub configs
 │   ├── copilot-instructions.md # GitHub Copilot rules
 │   └── pull_request_template.md
-├── agents/                     # External agent library
+├── ../agents/                     # External agent library
 │   ├── critical/               # Core agent personas
 │   └── README.md
 ├── docs/                       # Core documentation
@@ -67,8 +67,8 @@ This boilerplate provides **governance templates for AI-assisted development** w
 │   ├── WORKFLOW.md             # Phased build process
 │   ├── VERSIONING.md           # SemVer policy
 │   └── RELEASE_PROCESS.md      # Release steps
-├── skills/                     # Security/pentest skills
-├── Guide On CLAUDE.md/         # CLAUDE.md examples/templates
+├── ../skills/                     # Security/pentest skills
+├── ../examples/         # CLAUDE.md examples/templates
 ├── CLAUDE.md                   # Primary Claude config
 ├── CLAUDE-*.md                 # Domain-specific configs
 ├── GEMINI.md                   # Gemini CLI config
@@ -91,8 +91,8 @@ Read these files **immediately** when starting any work:
 
 | Order | File | Purpose | When |
 |-------|------|---------|------|
-| 1 | `docs/AGENT_HANDBOOK.md` | Source of truth for all behavior | Always |
-| 2 | `docs/WORKFLOW.md` | Understand the phased workflow | Always |
+| 1 | `AGENT_HANDBOOK.md` | Source of truth for all behavior | Always |
+| 2 | `WORKFLOW.md` | Understand the phased workflow | Always |
 | 3 | `CLAUDE.md` (or tool-specific) | Tool-specific instructions | Always |
 | 4 | `CLAUDE-activeContext.md` | Current session state (if exists) | Session continuity |
 
@@ -102,7 +102,7 @@ Load these based on the task:
 
 | File | Load When |
 |------|-----------|
-| `docs/AGENT_ROLES.md` | Working with multiple agents |
+| `AGENT_ROLES.md` | Working with multiple agents |
 | `TECHSTACK.md` | Need to understand tech choices |
 | `CLAUDE-patterns.md` | Implementing features matching existing code |
 | `CLAUDE-decisions.md` | Making architectural choices |
@@ -154,9 +154,9 @@ Load these based on the task:
 **Required Files:**
 - `CLAUDE.md` - Main instructions file
 - `.claude/settings.json` - Settings configuration
-- `.claude/agents/*.md` - Subagent definitions
+- `.claude/../agents/*.md` - Subagent definitions
 - `.claude/commands/**/*.md` - Slash commands
-- `.claude/skills/*/SKILL.md` - Skills definitions
+- `.claude/../skills/*/SKILL.md` - Skills definitions
 
 **Configuration:**
 
@@ -192,7 +192,7 @@ Load these based on the task:
 ```markdown
 # .cursor/rules.md
 
-- Follow `docs/AGENT_HANDBOOK.md`.
+- Follow `AGENT_HANDBOOK.md`.
 - Start in plan mode, ask the required intake questions, and wait for
   answers before making changes.
 - Make minimal, well-scoped changes.
@@ -212,7 +212,7 @@ Load these based on the task:
 # Copilot Instructions
 
 ## Ground Rules
-- Follow the policies in `docs/AGENT_HANDBOOK.md`.
+- Follow the policies in `AGENT_HANDBOOK.md`.
 - Prefer small, reviewable changes.
 - Do not commit secrets or credentials.
 
@@ -245,7 +245,7 @@ Load these based on the task:
 **Configuration:**
 
 ```
-Follow the policies in docs/AGENT_HANDBOOK.md and docs/WORKFLOW.md.
+Follow the policies in AGENT_HANDBOOK.md and WORKFLOW.md.
 Start in plan mode, ask the required intake questions, and wait for
 answers before making changes.
 Keep changes small and focused.
@@ -274,7 +274,7 @@ Read and use @CLAUDE.md for instruction
 - `BLACKBOX.md` - Blackbox adapter
 - `CODEX.md` - OpenAI Codex adapter
 
-Both reference `docs/AGENT_HANDBOOK.md` as the source of truth.
+Both reference `AGENT_HANDBOOK.md` as the source of truth.
 
 ---
 
@@ -518,7 +518,7 @@ Save to: `reports/planning/plan_[feature]_DD-MM-YYYY_HHMMSS.md`
 
 ### Critical Agents (Always Available)
 
-Located in `agents/critical/`:
+Located in `../agents/critical/`:
 
 | Agent | Role | When to Use |
 |-------|------|-------------|
@@ -529,7 +529,7 @@ Located in `agents/critical/`:
 
 ### Orchestrator Agents
 
-Located in `Guide On CLAUDE.md/CLAUDE.md Collection/orchestrators/`:
+Located in `../examples/CLAUDE.md Collection/orchestrators/`:
 
 | Agent | Role |
 |-------|------|
@@ -550,7 +550,7 @@ Framework-specific experts:
 
 ### Claude Code Subagents
 
-Located in `.claude/agents/`:
+Located in `.claude/../agents/`:
 
 | Agent | Purpose |
 |-------|---------|
@@ -642,7 +642,7 @@ Located in `.claude/commands/`:
 
 ### Skills
 
-Located in `.claude/skills/`:
+Located in `.claude/../skills/`:
 
 | Skill | Purpose |
 |-------|---------|
@@ -704,7 +704,7 @@ Legend: ✅ Full | ⚠️ Partial | ❌ None
 - [ ] Update `.env.example` with required variables
 - [ ] Create initial `CLAUDE-activeContext.md`
 - [ ] Configure tool-specific files for your IDE
-- [ ] Read `docs/AGENT_HANDBOOK.md` thoroughly
+- [ ] Read `AGENT_HANDBOOK.md` thoroughly
 
 ### For Each Session
 
@@ -727,12 +727,12 @@ Legend: ✅ Full | ⚠️ Partial | ❌ None
 
 ## Related Documentation
 
-- **Core**: `docs/AGENT_HANDBOOK.md`, `docs/WORKFLOW.md`
-- **Versioning**: `docs/VERSIONING.md`, `docs/RELEASE_PROCESS.md`
-- **CLAUDE.md Guides**: `Guide On CLAUDE.md/readme.md`
+- **Core**: `AGENT_HANDBOOK.md`, `WORKFLOW.md`
+- **Versioning**: `VERSIONING.md`, `RELEASE_PROCESS.md`
+- **CLAUDE.md Guides**: `../examples/readme.md`
 - **Tech Stack**: `TECHSTACK.md`
 - **AI Specification**: `AI_GUIDE.md` (AISP 5.1)
-- **MCP Servers**: `docs/SUBAGENTS_AND_MCP_SERVERS.md`
+- **MCP Servers**: `SUBAGENTS_AND_MCP_SERVERS.md`
 
 ## MCP Server Configurations
 

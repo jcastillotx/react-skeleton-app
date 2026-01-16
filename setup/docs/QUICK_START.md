@@ -4,7 +4,7 @@
 
 ## TL;DR
 
-1. **Always read** `docs/AGENT_HANDBOOK.md` first
+1. **Always read** `AGENT_HANDBOOK.md` first
 2. **Always start** in Plan Mode - ask questions before coding
 3. **Always keep** changes small and reviewable
 4. **Never commit** secrets or memory bank files
@@ -15,7 +15,7 @@
 
 | If You Use | Read These Files |
 |------------|------------------|
-| **Claude Code** | `CLAUDE.md` → `docs/AGENT_HANDBOOK.md` |
+| **Claude Code** | `CLAUDE.md` → `AGENT_HANDBOOK.md` |
 | **Cursor** | `.cursor/rules.md` → `CLAUDE.md` |
 | **GitHub Copilot** | `.github/copilot-instructions.md` |
 | **Gemini CLI** | `GEMINI.md` |
@@ -139,10 +139,10 @@ fd "filename"      # Find by name
 
 ## Next Steps
 
-- 📖 Full workflow: `docs/VIBE_CODING_WORKFLOW.md`
-- 📋 Agent handbook: `docs/AGENT_HANDBOOK.md`
+- 📖 Full workflow: `VIBE_CODING_WORKFLOW.md`
+- 📋 Agent handbook: `AGENT_HANDBOOK.md`
 - 🔧 Tech stack: `TECHSTACK.md`
-- 📝 CLAUDE.md examples: `Guide On CLAUDE.md/`
+- 📝 CLAUDE.md examples: `../examples/`
 
 ---
 

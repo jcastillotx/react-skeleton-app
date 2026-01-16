@@ -832,4 +832,4 @@ FIGMA_ACCESS_TOKEN=figd_xxxxxxxxxxxx
 ---
 
 *This document should be completed BEFORE Phase 1 (Requirements) of development orchestration.*
-*See `docs/DEVELOPMENT_ORCHESTRATION.md` for the complete workflow.*
+*See `DEVELOPMENT_ORCHESTRATION.md` for the complete workflow.*
