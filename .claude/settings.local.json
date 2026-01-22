@@ -10,6 +10,8 @@
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
+      "Bash(git:*)",
+      "Bash(npm:*)",
       "Bash(.venv/bin/pip:*)",
       "Bash(.venv/bin/python:*)",
       "Bash(awk:*)",

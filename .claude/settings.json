@@ -12,10 +12,8 @@
   },
   "extraKnownMarketplaces": {
     "everything-claude-code": {
-      "source": {
-        "source": "github",
-        "repo": "affaan-m/everything-claude-code"
-      }
+      "source": "github",
+      "repo": "affaan-m/everything-claude-code"
     }
   },
   "enabledPlugins": {
@@ -28,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title 'Claude Code' -subtitle 'Session Complete' -message \"Finished working in $(basename \"$PWD\")\" -sound default -timeout 10"
+            "command": "terminal-notifier -title 'Claude Code' -subtitle 'Session Complete' -message \"Finished working in $(basename $PWD)\" -sound default -timeout 10"
           }
         ]
       }
