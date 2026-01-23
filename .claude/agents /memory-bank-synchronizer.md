@@ -1,6 +1,27 @@
 ---
 name: memory-bank-synchronizer
-description: Use this agent proactively to synchronize memory bank documentation with actual codebase state, ensuring architectural patterns in memory files match implementation reality, updating technical decisions to reflect current code, aligning documentation with actual patterns, maintaining consistency between memory bank system and source code, and keeping all CLAUDE-*.md files accurately reflecting the current system state. Examples: <example>Context: Code has evolved beyond documentation. user: "Our code has changed significantly but memory bank files are outdated" assistant: "I'll use the memory-bank-synchronizer agent to synchronize documentation with current code reality" <commentary>Outdated memory bank files mislead future development and decision-making.</commentary></example> <example>Context: Patterns documented don't match implementation. user: "The patterns in CLAUDE-patterns.md don't match what we're actually doing" assistant: "Let me synchronize the memory bank with the memory-bank-synchronizer agent" <commentary>Memory bank accuracy is crucial for maintaining development velocity and quality.</commentary></example>
+description: |-
+  Use this agent proactively to synchronize memory bank documentation with the actual codebase state. This ensures architectural patterns in memory files match implementation reality, technical decisions reflect current code, documented patterns align with real usage, and all CLAUDE-*.md files accurately represent the current system state.
+
+  Examples:
+
+  <example>
+  Context: Code has evolved beyond documentation.
+  user: "Our code has changed significantly but memory bank files are outdated"
+  assistant: "I'll use the memory-bank-synchronizer agent to synchronize documentation with current code reality."
+  <commentary>
+  Outdated memory bank files mislead future development and decision-making.
+  </commentary>
+  </example>
+
+  <example>
+  Context: Documented patterns do not match implementation.
+  user: "The patterns in CLAUDE-patterns.md don't match what we're actually doing"
+  assistant: "Let me synchronize the memory bank using the memory-bank-synchronizer agent."
+  <commentary>
+  Memory bank accuracy is critical for maintaining development velocity and code quality.
+  </commentary>
+  </example>
 color: cyan
 ---
 
